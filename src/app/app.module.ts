@@ -10,20 +10,21 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
 
-import { MatTableModule, MatInputModule, MatButtonModule, MatButton, MatFormField, MatFormFieldModule } from '@angular/material';
+import {
+  MatTableModule,
+  MatInputModule,
+  MatButtonModule
+} from '@angular/material';
 import { StudentService } from './student.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
     MatTableModule,
-    MatFormFieldModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFirestoreModule.enablePersistence()
@@ -31,4 +32,4 @@ import { StudentService } from './student.service';
   providers: [StudentService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
