@@ -10,11 +10,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
 
-import {
-  MatTableModule,
-  MatInputModule,
-  MatButtonModule
-} from '@angular/material';
+import { MaterialModule } from './material.module';
 import { StudentService } from './student.service';
 
 @NgModule({
@@ -22,10 +18,8 @@ import { StudentService } from './student.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatTableModule,
     FormsModule,
+    MaterialModule,
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFirestoreModule.enablePersistence()
   ],
