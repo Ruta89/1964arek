@@ -43,3 +43,4 @@ Thumbs.db
 yarn.lock
 src/app/app.component.spec.ts
 src/environments/environment.ts
+src/environments/environment.prod.ts
