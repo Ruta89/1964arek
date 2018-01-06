@@ -1,5 +1,8 @@
-<div>
+<mat-toolbar color="primary">
+  <span>Czasówka</span>
+</mat-toolbar>
 
+<mat-card>
   <mat-form-field>
     <input matInput placeholder="Imie" [(ngModel)]="studentDetails.studentName">
 
@@ -14,8 +17,8 @@
   </mat-form-field>
 
   <button mat-raised-button (click)="addStudent()" color="primary">Dodaj</button>
+</mat-card>
 
-</div>
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
