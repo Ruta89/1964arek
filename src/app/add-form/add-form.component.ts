@@ -12,13 +12,34 @@ export class AddFormComponent implements OnInit {
     l1: '',
     szt: '',
     min: '',
-    date: Date.now()
+    date: null
   };
+  visable = false;
 
   constructor(private czasService: CzasService) {}
 
   ngOnInit() {}
   addCzas() {
+    this.czasowka.date = Date.now();
     this.czasService.addCzas(this.czasowka);
+
+    // reset form
+    this.czasowka = {
+      wll: '',
+      l1: '',
+      szt: '',
+      min: '',
+      date: null
+    };
+
+    this.visable = false;
+  }
+
+  visableToggle() {
+    if (this.visable === true) {
+      this.visable = false;
+    } else {
+      this.visable = true;
+    }
   }
 }
