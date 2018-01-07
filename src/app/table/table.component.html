@@ -1,0 +1,38 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Kolumny -->
+    <ng-container matColumnDef="wll">
+      <mat-header-cell *matHeaderCellDef>Wll</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.wll }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="l1">
+      <mat-header-cell *matHeaderCellDef>L1</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.l1 }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="szt">
+      <mat-header-cell *matHeaderCellDef>Szt</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.szt }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="min">
+      <mat-header-cell *matHeaderCellDef>Minut</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.min }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="klik(row)">
+
+    </mat-row>
+
+  </mat-table>
+</div>
