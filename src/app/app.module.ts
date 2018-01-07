@@ -9,6 +9,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { MaterialModule } from './material.module';
 import { CzasService } from './czas.service';
@@ -21,7 +22,8 @@ import { CzasService } from './czas.service';
     FormsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.configFirebase),
-    AngularFirestoreModule.enablePersistence()
+    AngularFirestoreModule.enablePersistence(),
+    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : []
   ],
   providers: [CzasService],
   bootstrap: [AppComponent]
