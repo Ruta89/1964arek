@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 
@@ -21,7 +22,8 @@ import { StudentService } from './student.service';
     FormsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.configFirebase),
-    AngularFirestoreModule.enablePersistence()
+    AngularFirestoreModule.enablePersistence(),
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]
