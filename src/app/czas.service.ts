@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
+
 @Injectable()
-export class StudentService {
+export class CzasService {
   constructor(private afs: AngularFirestore) {}
 
-  addStudent(studentData) {
+  addCzas(czasData) {
     this.afs
-      .collection('students')
-      .add(studentData)
+      .collection('czasowka')
+      .add(czasData)
       .then(() => {
-        console.log('zrobione');
+        console.log('dodano czas');
       });
   }
 
-  getStudents() {
+  getCzasy() {
+    console.log('getCzasy');
     return this.afs
-      .collection('students', ref => ref.orderBy('studentAge'))
+      .collection('czasowka', ref => ref.orderBy('date'))
       .valueChanges();
   }
 }

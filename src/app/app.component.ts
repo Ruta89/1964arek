@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { StudentService } from './student.service';
+import { CzasService } from './czas.service';
 import { DataSource } from '@angular/cdk/collections';
 @Component({
   selector: 'app-root',
@@ -8,28 +8,33 @@ import { DataSource } from '@angular/cdk/collections';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  studentDetails = {
-    studentName: '',
-    studentAge: '',
-    studentGrade: ''
+  czasowka = {
+    wll: '',
+    l1: '',
+    szt: '',
+    min: '',
+    date: Date.now()
   };
 
-  dataSource = new StudentDataSource(this.student);
-  displayedColumns = ['Name', 'Age', 'Grade'];
+  dataSource = new CzasDataSource(this.czasService);
+  displayedColumns = ['wll', 'l1', 'szt', 'min', 'date'];
 
-  constructor(private student: StudentService, private afs: AngularFirestore) {}
+  constructor(
+    private czasService: CzasService,
+    private afs: AngularFirestore
+  ) {}
 
-  addStudent() {
-    this.student.addStudent(this.studentDetails);
+  addCzas() {
+    this.czasService.addCzas(this.czasowka);
   }
 }
 
-export class StudentDataSource extends DataSource<any> {
-  constructor(private student: StudentService) {
+export class CzasDataSource extends DataSource<any> {
+  constructor(private czasService: CzasService) {
     super();
   }
   connect() {
-    return this.student.getStudents();
+    return this.czasService.getCzasy();
   }
 
   disconnect() {}

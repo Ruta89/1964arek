@@ -11,7 +11,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
 import { MaterialModule } from './material.module';
-import { StudentService } from './student.service';
+import { CzasService } from './czas.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +23,7 @@ import { StudentService } from './student.service';
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [StudentService],
+  providers: [CzasService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

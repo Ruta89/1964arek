@@ -4,43 +4,59 @@
 
 <mat-card>
   <mat-form-field>
-    <input matInput placeholder="Imie" [(ngModel)]="studentDetails.studentName">
+    <input matInput placeholder="Wll" [(ngModel)]="czasowka.wll">
 
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Wiek" [(ngModel)]="studentDetails.studentAge">
+    <input matInput placeholder="L1" [(ngModel)]="czasowka.l1">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Stopien" [(ngModel)]="studentDetails.studentGrade">
+    <input matInput placeholder="Szt" [(ngModel)]="czasowka.szt">
   </mat-form-field>
 
-  <button mat-raised-button (click)="addStudent()" color="primary">Dodaj</button>
+  <mat-form-field>
+    <input matInput placeholder="Minut" [(ngModel)]="czasowka.min">
+  </mat-form-field>
+
+  <button mat-raised-button (click)="addCzas()" color="primary">Dodaj</button>
 </mat-card>
 
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
     <!-- Kolumny -->
-    <ng-container matColumnDef="Name">
-      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <ng-container matColumnDef="wll">
+      <mat-header-cell *matHeaderCellDef>Wll</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        {{ element.studentName }}
+        {{ element.wll }}
       </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="Age">
-      <mat-header-cell *matHeaderCellDef>Age</mat-header-cell>
+    <ng-container matColumnDef="l1">
+      <mat-header-cell *matHeaderCellDef>L1</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        {{ element.studentAge }}
+        {{ element.l1 }}
       </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="Grade">
-      <mat-header-cell *matHeaderCellDef>Grade</mat-header-cell>
+    <ng-container matColumnDef="szt">
+      <mat-header-cell *matHeaderCellDef>Szt</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        {{ element.studentGrade }}
+        {{ element.szt }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="min">
+      <mat-header-cell *matHeaderCellDef>Minut</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.min }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef>date</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.date | date }}
       </mat-cell>
     </ng-container>
 
