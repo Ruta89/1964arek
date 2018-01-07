@@ -17,7 +17,7 @@ export class AppComponent {
   };
 
   dataSource = new CzasDataSource(this.czasService);
-  displayedColumns = ['wll', 'l1', 'szt', 'min', 'date'];
+  displayedColumns = ['wll', 'l1', 'szt', 'min'];
 
   constructor(
     private czasService: CzasService,
@@ -26,6 +26,10 @@ export class AppComponent {
 
   addCzas() {
     this.czasService.addCzas(this.czasowka);
+  }
+  klik(row) {
+    console.log('klik');
+    console.log(row);
   }
 }
 

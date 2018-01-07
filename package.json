@@ -1,6 +1,6 @@
 {
-  "name": "data-tables-material",
-  "version": "0.0.0",
+  "name": "czasowka",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
