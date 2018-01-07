@@ -1,15 +1,39 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Czasówka</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 4: Manifest -->
+  <meta name="theme-color" content="#673ab7">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root>
+    <!--
+      2 Nagłówek Aby uniknąć nagłych skoków, możemy dodać fałszywy szablon nagłówka.
+    -->
+    <nav style="background-color: #673ab7; height: 56px; width: 100%">
+      </navstyle>
+      <!-- end -->
+      <!-- 1 loader -->
+      <div class="spinner"></div>
+      <!-- loader -->
+  </app-root>
+
+  <!-- 3: JS Fallback Niektóre ostrzeżenia przed latarnią morską mówią, że nie dostarczyliśmy żadnych treści, jeśli skrypty nie są dostępne. Aby sobie z tym poradzić, możemy użyć tagu HTML <noscript>. Na przykład: -->
+  <noscript>
+    <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+      Niestety, ale aplikacja nie jest dostępna bez javascript
+    </h3>
+  </noscript>
+  <!-- end -->
 </body>
+
 </html>
