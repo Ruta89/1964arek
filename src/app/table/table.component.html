@@ -1,3 +1,5 @@
+<app-detail [czas]="selectedCzas"></app-detail>
+
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
@@ -30,7 +32,7 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="klik(row)">
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="klik(row)" [class.selected]="row === selectedCzas">
 
     </mat-row>
 

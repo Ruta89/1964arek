@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { CzasService } from '../shared/czas.service';
-// import { DataSource } from '@angular/cdk/collections';
 import { CzasDataSource } from '../shared/datasource';
 @Component({
   selector: 'app-table',
@@ -11,15 +9,19 @@ import { CzasDataSource } from '../shared/datasource';
 export class TableComponent implements OnInit {
   dataSource = new CzasDataSource(this.czasService);
   displayedColumns = ['wll', 'l1', 'szt', 'min'];
+  selectedCzas;
 
-  constructor(
-    private czasService: CzasService,
-    private afs: AngularFirestore
-  ) {}
-  ngOnInit() {}
+  constructor(private czasService: CzasService) {}
+  ngOnInit() {
+    this.getCzasyHours();
+  }
 
-  klik(row) {
-    console.log('klik');
-    console.log(row);
+  klik(czas) {
+    this.selectedCzas = czas;
+  }
+  getCzasyHours() {
+    return this.czasService.getCzasy().map(arr => {
+      arr.reverse();
+    });
   }
 }

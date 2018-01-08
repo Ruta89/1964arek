@@ -15,9 +15,12 @@ export class CzasService {
   }
 
   getCzasy() {
+    // z ostatnich 8godzin
+    const hoursResult: number = Date.now() - 8 * 3600000;
     console.log('getCzasy');
-    return this.afs
-      .collection('czasowka', ref => ref.orderBy('date'))
+    const wynik = this.afs
+      .collection('czasowka', ref => ref.orderBy('date').startAt(hoursResult))
       .valueChanges();
+    return wynik;
   }
 }

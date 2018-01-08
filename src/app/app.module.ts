@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { TableComponent } from './table/table.component';
+import { DetailComponent } from './detail/detail.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -17,7 +18,12 @@ import { MaterialModule } from './shared/material.module';
 import { CzasService } from './shared/czas.service';
 
 @NgModule({
-  declarations: [AppComponent, AddFormComponent, TableComponent],
+  declarations: [
+    AppComponent,
+    AddFormComponent,
+    TableComponent,
+    DetailComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
