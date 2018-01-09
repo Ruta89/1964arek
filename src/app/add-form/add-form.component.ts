@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CzasService } from '../shared/czas.service';
+import { Czas } from '../shared/model';
 
 @Component({
   selector: 'app-add-form',
@@ -7,11 +8,11 @@ import { CzasService } from '../shared/czas.service';
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
-  czasowka = {
-    wll: '',
-    l1: '',
-    szt: '',
-    min: '',
+  czasowka: Czas = {
+    wll: null,
+    l1: null,
+    szt: null,
+    min: null,
     date: null
   };
   visable = false;
@@ -25,10 +26,10 @@ export class AddFormComponent implements OnInit {
 
     // reset form
     this.czasowka = {
-      wll: '',
-      l1: '',
-      szt: '',
-      min: '',
+      wll: null,
+      l1: null,
+      szt: null,
+      min: null,
       date: null
     };
 
