@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CzasService } from '../shared/czas.service';
 import { CzasDataSource } from '../shared/datasource';
+import { Czas } from '../shared/model';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -9,19 +10,13 @@ import { CzasDataSource } from '../shared/datasource';
 export class TableComponent implements OnInit {
   dataSource = new CzasDataSource(this.czasService);
   displayedColumns = ['wll', 'l1', 'szt', 'min'];
-  selectedCzas;
+  selectedCzas: Czas;
 
   constructor(private czasService: CzasService) {}
-  ngOnInit() {
-    this.getCzasyHours();
-  }
+  ngOnInit() {}
 
-  klik(czas) {
+  klik(czas: Czas) {
+    console.log('klik ', czas);
     this.selectedCzas = czas;
-  }
-  getCzasyHours() {
-    return this.czasService.getCzasy().map(arr => {
-      arr.reverse();
-    });
   }
 }

@@ -1,26 +1,46 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument
+} from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
+import { Czas, CzasId } from './model';
 @Injectable()
 export class CzasService {
-  constructor(private afs: AngularFirestore) {}
+  private czasCollection: AngularFirestoreCollection<Czas>;
+  czasy: Observable<CzasId[]>;
+  czasDoc: AngularFirestoreDocument<Czas>;
+  newCzas: Observable<Czas>;
 
-  addCzas(czasData) {
-    this.afs
-      .collection('czasowka')
-      .add(czasData)
-      .then(() => {
-        console.log('dodano czas');
+  // constructor(private readonly afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore) {
+    this.czasCollection = afs.collection<Czas>('czasowka', ref =>
+      ref.orderBy('date', 'asc')
+    );
+    this.czasy = this.czasCollection.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Czas;
+        const id = a.payload.doc.id;
+        return { id, ...data };
       });
+    });
   }
 
   getCzasy() {
-    // z ostatnich 8godzin
-    const hoursResult: number = Date.now() - 8 * 3600000;
-    console.log('getCzasy');
-    const wynik = this.afs
-      .collection('czasowka', ref => ref.orderBy('date').startAt(hoursResult))
-      .valueChanges();
-    return wynik;
+    return this.czasy; // datasource connect()
+  }
+  addCzas(czas: Czas) {
+    this.czasCollection.add(czas);
+  }
+  deleteCzas(id: CzasId) {
+    this.czasDoc = this.afs.doc<Czas>(`czasowka/${id}`);
+    this.czasDoc.delete();
+  }
+
+  updateCzas(czas: Czas) {
+    this.czasDoc = this.afs.doc<Czas>(`czasowka/${czas.id}`);
+    this.czasDoc.update(czas);
   }
 }

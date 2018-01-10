@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-slide-toggle (click)="visableToggle()" color="primary">Pokaz formularz</mat-slide-toggle>
+  <button mat-raised-button (click)="visableToggle()" color="accent">Dodaj</button>
   <div *ngIf="visable">
     <mat-form-field>
       <input matInput type="number" placeholder="Wll" [(ngModel)]="czasowka.wll">
