@@ -4,6 +4,7 @@
   "description": "Kalkulator czasu",
   "start_url": "index.html",
   "display": "standalone",
+  "orientation": "portrait",
   "theme_color": "#673ab7",
   "background_color": "#ffffff",
   "icons": [

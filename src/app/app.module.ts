@@ -31,7 +31,7 @@ import { CzasService } from './shared/czas.service';
     MaterialModule,
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFirestoreModule.enablePersistence(),
-    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : []
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
   providers: [CzasService],
   bootstrap: [AppComponent]

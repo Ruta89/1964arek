@@ -3,8 +3,8 @@
   <mat-card>
     <h2>{{ czas.wll }}-{{ czas.l1 }}-{{ czas.szt }}-{{ czas.min }} </h2>
     <button mat-raised-button color="primary" (click)="update(czas)">Edytuj</button>
-    <button mat-raised-button color="warn" (click)="delete(czas.id)">Usun</button>
-    <button mat-raised-button color="warn" (click)="changeState()">Zamknij</button>
+    <button mat-raised-button color="warn" (click)="delete(czas)">Usun</button>
+    <button mat-raised-button color="accent" (click)="changeState()">Zamknij</button>
   </mat-card>
   <mat-card *ngIf="editState">
 

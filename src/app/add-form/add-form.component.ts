@@ -13,7 +13,9 @@ export class AddFormComponent implements OnInit {
     l1: null,
     szt: null,
     min: null,
-    date: null
+    note: null,
+    created: null,
+    id: null
   };
   visable = false;
 
@@ -21,8 +23,8 @@ export class AddFormComponent implements OnInit {
 
   ngOnInit() {}
   addCzas() {
-    this.czasowka.date = Date.now();
-    this.czasService.addCzas(this.czasowka);
+    this.czasowka.created = new Date();
+    this.czasService.add(this.czasowka);
 
     // reset form
     this.czasowka = {
@@ -30,7 +32,9 @@ export class AddFormComponent implements OnInit {
       l1: null,
       szt: null,
       min: null,
-      date: null
+      note: null,
+      created: null,
+      id: null
     };
 
     this.visable = false;

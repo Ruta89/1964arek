@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Czas, CzasId } from '../shared/model';
+import { Czas } from '../shared/model';
 import { CzasService } from '../shared/czas.service';
 
 @Component({
@@ -14,9 +14,9 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {}
 
-  delete(id: CzasId) {
-    console.log('delete', id);
-    this.czasService.deleteCzas(id);
+  delete(data: Czas) {
+    console.log('delete', data);
+    this.czasService.delete(data.id);
     this.changeState();
   }
 
@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
   }
   updateCzas(czas: Czas) {
     console.log('updateCzas', czas);
-    this.czasService.updateCzas(czas);
+    this.czasService.update(czas);
     this.changeState();
   }
   changeState() {

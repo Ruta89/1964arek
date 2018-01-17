@@ -1,5 +1,13 @@
 <app-detail [czas]="selectedCzas"></app-detail>
 
+<mat-card>
+  <div>
+    <b>
+      Wyrobione</b> {{ sumMinut /60 | number}}godz = {{ sumMinut | number}}min
+    <b>Brakuje</b> {{( 450 - sumMinut) / 60 | number}}godz = {{ 450 - sumMinut | number }}min
+  </div>
+</mat-card>
+
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
