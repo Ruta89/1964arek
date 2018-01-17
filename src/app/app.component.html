@@ -2,62 +2,6 @@
   <span>Czasówka</span>
 </mat-toolbar>
 
-<mat-card>
-  <mat-form-field>
-    <input matInput placeholder="Wll" [(ngModel)]="czasowka.wll">
+<app-add-form>ladowanie addForm ...</app-add-form>
 
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="L1" [(ngModel)]="czasowka.l1">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Szt" [(ngModel)]="czasowka.szt">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Minut" [(ngModel)]="czasowka.min">
-  </mat-form-field>
-
-  <button mat-raised-button (click)="addCzas()" color="primary">Dodaj</button>
-</mat-card>
-
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
-
-    <!-- Kolumny -->
-    <ng-container matColumnDef="wll">
-      <mat-header-cell *matHeaderCellDef>Wll</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        {{ element.wll }}
-      </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="l1">
-      <mat-header-cell *matHeaderCellDef>L1</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        {{ element.l1 }}
-      </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="szt">
-      <mat-header-cell *matHeaderCellDef>Szt</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        {{ element.szt }}
-      </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="min">
-      <mat-header-cell *matHeaderCellDef>Minut</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        {{ element.min }}
-      </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="klik(row)">
-
-    </mat-row>
-
-  </mat-table>
-</div>
+<app-table>ladowanie table ... </app-table>

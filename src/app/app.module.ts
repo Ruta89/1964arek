@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { AddFormComponent } from './add-form/add-form.component';
+import { TableComponent } from './table/table.component';
+import { DetailComponent } from './detail/detail.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -11,11 +14,16 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-import { MaterialModule } from './material.module';
-import { CzasService } from './czas.service';
+import { MaterialModule } from './shared/material.module';
+import { CzasService } from './shared/czas.service';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    AddFormComponent,
+    TableComponent,
+    DetailComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -23,7 +31,7 @@ import { CzasService } from './czas.service';
     MaterialModule,
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFirestoreModule.enablePersistence(),
-    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : []
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
   providers: [CzasService],
   bootstrap: [AppComponent]

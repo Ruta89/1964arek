@@ -1,0 +1,30 @@
+<div *ngIf="czas">
+
+  <mat-card>
+    <h2>{{ czas.wll }}-{{ czas.l1 }}-{{ czas.szt }}-{{ czas.min }} </h2>
+    <button mat-raised-button color="primary" (click)="update(czas)">Edytuj</button>
+    <button mat-raised-button color="warn" (click)="delete(czas)">Usun</button>
+    <button mat-raised-button color="accent" (click)="changeState()">Zamknij</button>
+  </mat-card>
+  <mat-card *ngIf="editState">
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Wll" [(ngModel)]="czas.wll">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="L1" [(ngModel)]="czas.l1">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Szt" [(ngModel)]="czas.szt">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Minut" [(ngModel)]="czas.min">
+    </mat-form-field>
+
+    <button mat-raised-button (click)="updateCzas(czas)" color="primary">update</button>
+
+  </mat-card>
+</div>

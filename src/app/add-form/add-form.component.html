@@ -1,0 +1,22 @@
+<mat-card>
+  <button mat-raised-button (click)="visableToggle()" color="accent">Dodaj</button>
+  <div *ngIf="visable">
+    <mat-form-field>
+      <input matInput type="number" placeholder="Wll" [(ngModel)]="czasowka.wll">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="L1" [(ngModel)]="czasowka.l1">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Szt" [(ngModel)]="czasowka.szt">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Minut" [(ngModel)]="czasowka.min">
+    </mat-form-field>
+
+    <button mat-raised-button (click)="addCzas()" color="primary">Dodaj</button>
+  </div>
+</mat-card>
