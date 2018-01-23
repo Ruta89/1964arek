@@ -6,4 +6,4 @@
 
  Kod:  [github](https://github.com/Ruta89/1964arek/)
 
-![Print screen1](/src/assets/moje/pwa.png?raw=true "Print screen2")
+![Print screen1](/src/assets/pwa.png?raw=true "Print screen2")

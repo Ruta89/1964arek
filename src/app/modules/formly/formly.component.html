@@ -1,0 +1,10 @@
+<div>
+  <mat-card>
+    <form [formGroup]="form" (ngSubmit)="submit(userModel)">
+      <formly-form [model]="userModel" [fields]="userFields">
+        <button type="submit" mat-raised-button>Wyslij</button>
+      </formly-form>
+    </form>
+
+  </mat-card>
+</div>

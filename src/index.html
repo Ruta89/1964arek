@@ -7,25 +7,28 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 4: Manifest -->
-  <meta name="theme-color" content="#673ab7">
-  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="theme-color" content="#f48c5b">
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
-  <app-root>
-    <div class="spinner"></div>
-  </app-root>
+  <app-root></app-root>
 
   <!-- 3: JS Fallback Niektóre ostrzeżenia przed latarnią morską mówią, że nie dostarczyliśmy żadnych treści, jeśli skrypty nie są dostępne. Aby sobie z tym poradzić, możemy użyć tagu HTML <noscript>. Na przykład: -->
   <noscript>
-    <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+    <h3>
       Niestety, ale aplikacja nie jest dostępna bez javascript
     </h3>
   </noscript>
   <!-- end -->
+
+
 </body>
 
 </html>

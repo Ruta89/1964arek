@@ -1,0 +1,42 @@
+<form [formGroup]="formStepper">
+
+  <mat-horizontal-stepper>
+    <mat-step label="Step 1">
+
+      <ng-template matStepLabel>Wpisz tonaz</ng-template>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Wll" formControlName="firstCtrl" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperNext type="button">Dalej</button>
+      </div>
+
+    </mat-step>
+
+    <mat-step label="Step 2">
+
+      <ng-template matStepLabel>Podaj dlugosc</ng-template>
+      <mat-form-field>
+        <input matInput type="number" placeholder="L1" formControlName="secondCtrl" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious type="button">Wstecz</button>
+        <button mat-button matStepperNext type="button">Dalej</button>
+      </div>
+
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Gotowe</ng-template>
+      Wszystko jest ok.
+      <div>
+        <button mat-button matStepperPrevious>Wstecz</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+
+</form>
+<!-- Copyright 2017 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

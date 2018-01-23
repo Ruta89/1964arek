@@ -2,12 +2,12 @@
   "name": "Czasowka",
   "short_name": "Czas",
   "description": "Kalkulator czasu",
-
-  "start_url": "/",
+  "scope": "/",
+  "start_url": "/index.html",
   "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#400040",
-  "background_color": "#00FF40",
+  "orientation": "any",
+  "theme_color": "#673ab7",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "/assets/images/icons/icon-72x72.png",
@@ -49,5 +49,8 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+
+  "related_applications": [],
+  "prefer_related_applications": false
 }
